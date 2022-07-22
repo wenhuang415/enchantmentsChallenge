@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+fetch('http://jump.javin.io:5000/api/zones')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
 function App() {
   return (
     <div className="App">
