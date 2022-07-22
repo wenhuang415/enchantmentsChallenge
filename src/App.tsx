@@ -1,6 +1,5 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Cards from './Components/Cards';
 
 fetch('http://jump.javin.io:5000/api/zones')
   .then(response => response.json())
@@ -10,7 +9,6 @@ fetch('http://jump.javin.io:5000/api/zones')
     //const zoneID = Object.keys(zones[keys])
     //console.log(zones);
     //console.log(keys);
-    const str: String = 'name';
     keys.forEach((key) => {
       var zoneID = Object.keys(zones[key]);
       //console.log(zoneID);
@@ -21,7 +19,7 @@ fetch('http://jump.javin.io:5000/api/zones')
 function App() {  
   return (
     <div className="App">
-
+      <Cards/>
     </div>
   );
 }
