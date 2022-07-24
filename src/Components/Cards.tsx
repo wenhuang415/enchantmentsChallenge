@@ -7,78 +7,57 @@ import {
   Text,
   Badge,
   Button,
+  CardSection,
 } from "@mantine/core";
 
+/*
 function getZones(){
     var zoneName: any[] = [];
     fetch('http://jump.javin.io:5000/api/zones')
     .then(response => response.json())
     .then(obj => {
+        //console.log(obj);
         var zones = obj.data;
         const keys = Object.keys(zones);
+        //console.log(zones[index][index+1].name)
+        //console.log(keys);
         keys.forEach((key) => {
-        var zoneID = Object.keys(zones[key]);
-        zoneName.push(zones[key][zoneID.toString()].name);
+          var zoneID = Object.keys(zones[key]);
+          zoneName.push(zones[key][zoneID.toString()].name);
+          //console.log(zones[key][zoneID.toString()].name);
         })
-    });
+        
+    })
+    .catch(Error);
     return zoneName;
 }
+*/
 
-const zones = getZones();
+
+async function getZones() {
+  const response = await fetch("http://jump.javin.io:5000/api/zones");
+  const zones = await response.json();
+  //console.log(zones.data[index][index+1].name)
+  //return zones.data[index][index+1].name;
+  return zones;
+}
+//var zones = getZones(0);
 //console.log(zones);
-console.log(zones);
-
-
 
 function Cards() {
   const theme = useMantineTheme();
+  theme.colorScheme= 'dark';
   return (
     <div className="App">
       <Grid justify="space-around">
-        <Grid.Col style={{ maxWidth: 300 }} sm={4} xs={4}>
-                <Card shadow="sm" p="lg">
-        <Card.Section>
-          <Image src="./colchuck.png" height={160} alt="Norway" />
-        </Card.Section>
-
-        <Group position="apart" style={{ marginBottom: 5, marginTop: theme.spacing.sm }}>
-          <Text weight={500}>Norway Fjord Adventures</Text>
-          <Badge color="pink" variant="light">
-            On Sale
-          </Badge>
-        </Group>
-
-        <Text size="sm" style={{  lineHeight: 1.5 }}>
-          With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-          activities on and around the fjords of Norway
-        </Text>
-
-        <Button variant="light" color="blue" fullWidth style={{ marginTop: 14 }}>
-          Book classic tour now
-        </Button>
-      </Card>
-        </Grid.Col>
-        <Grid.Col style={{ maxWidth: 300 }} sm={4} xs={4}>
-          <Card shadow="sm" p="lg">
-            <Card.Section>
-              <Image src="./coreEnchantment.jpeg" height={160} alt="Norway" />
-            </Card.Section>
-
+        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
+          <Card color="blue" shadow="sm" p="lg">
             <Group
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
               <Text weight={500}>Norway Fjord Adventures</Text>
-              <Badge color="pink" variant="light">
-                On Sale
-              </Badge>
             </Group>
-
-            <Text size="sm" style={{ lineHeight: 1.5 }}>
-              With Fjord Tours you can explore more of the magical fjord
-              landscapes with tours and activities on and around the fjords of
-              Norway
-            </Text>
 
             <Button
               variant="light"
@@ -86,31 +65,19 @@ function Cards() {
               fullWidth
               style={{ marginTop: 14 }}
             >
-              Book classic tour now
+              Get Award Data
             </Button>
           </Card>
         </Grid.Col>
-        <Grid.Col style={{ maxWidth: 300 }} sm={4} xs={4}>
+        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
           <Card shadow="sm" p="lg">
-            <Card.Section>
-              <Image src="./image.png" height={160} alt="Norway" />
-            </Card.Section>
-
             <Group
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
               <Text weight={500}>Norway Fjord Adventures</Text>
-              <Badge color="pink" variant="light">
-                On Sale
-              </Badge>
             </Group>
 
-            <Text size="sm" style={{ lineHeight: 1.5 }}>
-              With Fjord Tours you can explore more of the magical fjord
-              landscapes with tours and activities on and around the fjords of
-              Norway
-            </Text>
 
             <Button
               variant="light"
@@ -118,31 +85,19 @@ function Cards() {
               fullWidth
               style={{ marginTop: 14 }}
             >
-              Book classic tour now
+              Get Award Data
             </Button>
           </Card>
         </Grid.Col>
-        <Grid.Col style={{ maxWidth: 300 }} sm={4} xs={4}>
+        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
           <Card shadow="sm" p="lg">
-            <Card.Section>
-              <Image src="./image.png" height={160} alt="Norway" />
-            </Card.Section>
-
             <Group
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
               <Text weight={500}>Norway Fjord Adventures</Text>
-              <Badge color="pink" variant="light">
-                On Sale
-              </Badge>
             </Group>
 
-            <Text size="sm" style={{ lineHeight: 1.5 }}>
-              With Fjord Tours you can explore more of the magical fjord
-              landscapes with tours and activities on and around the fjords of
-              Norway
-            </Text>
 
             <Button
               variant="light"
@@ -150,32 +105,42 @@ function Cards() {
               fullWidth
               style={{ marginTop: 14 }}
             >
-              Book classic tour now
+              Get Award Data
+            </Button>
+          </Card>
+        </Grid.Col>
+        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
+          <Card shadow="sm" p="lg">
+            <Group
+              position="apart"
+              style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
+            >
+              <Text weight={500}>Norway Fjord Adventures</Text>
+            </Group>
+
+
+
+            <Button
+              variant="light"
+              color="blue"
+              fullWidth
+              style={{ marginTop: 14 }}
+            >
+              Get Award Data
             </Button>
           </Card>
         </Grid.Col>
 
-        <Grid.Col style={{ maxWidth: 300 }} sm={4} xs={4}>
+        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
           <Card shadow="sm" p="lg">
-            <Card.Section>
-              <Image src="./image.png" height={160} alt="Norway" />
-            </Card.Section>
-
             <Group
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
               <Text weight={500}>Norway Fjord Adventures</Text>
-              <Badge color="pink" variant="light">
-                On Sale
-              </Badge>
             </Group>
 
-            <Text size="sm" style={{ lineHeight: 1.5 }}>
-              With Fjord Tours you can explore more of the magical fjord
-              landscapes with tours and activities on and around the fjords of
-              Norway
-            </Text>
+
 
             <Button
               variant="light"
@@ -183,31 +148,19 @@ function Cards() {
               fullWidth
               style={{ marginTop: 14 }}
             >
-              Book classic tour now
+              Get Award Data
             </Button>
           </Card>
         </Grid.Col>
-        <Grid.Col style={{ maxWidth: 300 }} sm={4} xs={4}>
+        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
           <Card shadow="sm" p="lg">
-            <Card.Section>
-              <Image src="./image.png" height={160} alt="Norway" />
-            </Card.Section>
-
             <Group
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
               <Text weight={500}>Norway Fjord Adventures</Text>
-              <Badge color="pink" variant="light">
-                On Sale
-              </Badge>
             </Group>
 
-            <Text size="sm" style={{ lineHeight: 1.5 }}>
-              With Fjord Tours you can explore more of the magical fjord
-              landscapes with tours and activities on and around the fjords of
-              Norway
-            </Text>
 
             <Button
               variant="light"
@@ -215,31 +168,19 @@ function Cards() {
               fullWidth
               style={{ marginTop: 14 }}
             >
-              Book classic tour now
+              Get Award Data
             </Button>
           </Card>
         </Grid.Col>
-        <Grid.Col style={{ maxWidth: 300 }} sm={4} xs={4}>
+        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
           <Card shadow="sm" p="lg">
-            <Card.Section>
-              <Image src="./image.png" height={160} alt="Norway" />
-            </Card.Section>
-
             <Group
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
               <Text weight={500}>Norway Fjord Adventures</Text>
-              <Badge color="pink" variant="light">
-                On Sale
-              </Badge>
             </Group>
 
-            <Text size="sm" style={{ lineHeight: 1.5 }}>
-              With Fjord Tours you can explore more of the magical fjord
-              landscapes with tours and activities on and around the fjords of
-              Norway
-            </Text>
 
             <Button
               variant="light"
@@ -247,31 +188,19 @@ function Cards() {
               fullWidth
               style={{ marginTop: 14 }}
             >
-              Book classic tour now
+              Get Award Data
             </Button>
           </Card>
         </Grid.Col>
-        <Grid.Col style={{ maxWidth: 300 }} sm={4} xs={4}>
+        <Grid.Col style={{ paddingTop: 40,maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
           <Card shadow="sm" p="lg">
-            <Card.Section>
-              <Image src="./image.png" height={160} alt="Norway" />
-            </Card.Section>
-
             <Group
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
               <Text weight={500}>Norway Fjord Adventures</Text>
-              <Badge color="pink" variant="light">
-                On Sale
-              </Badge>
             </Group>
 
-            <Text size="sm" style={{ lineHeight: 1.5 }}>
-              With Fjord Tours you can explore more of the magical fjord
-              landscapes with tours and activities on and around the fjords of
-              Norway
-            </Text>
 
             <Button
               variant="light"
@@ -279,7 +208,7 @@ function Cards() {
               fullWidth
               style={{ marginTop: 14 }}
             >
-              Book classic tour now
+              Get Award Data
             </Button>
           </Card>
         </Grid.Col>
