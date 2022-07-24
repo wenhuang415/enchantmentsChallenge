@@ -3,7 +3,10 @@ import Cards from './Components/Cards';
 
 function App() {  
   return (
-    <div className="App">
+    <div className="App"
+      style={{
+        backgroundColor: 'lightblue'
+      }}>
       <Cards/>
     </div>
   );

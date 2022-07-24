@@ -46,7 +46,7 @@ async function getZones() {
 
 function Cards() {
   const theme = useMantineTheme();
-  theme.colorScheme= 'dark';
+  theme.colorScheme = 'light';
   return (
     <div className="App">
       <Grid justify="space-around">
