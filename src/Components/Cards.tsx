@@ -2,63 +2,50 @@ import {
   Card,
   Grid,
   useMantineTheme,
-  Image,
   Group,
   Text,
-  Badge,
   Button,
-  CardSection,
 } from "@mantine/core";
 
-/*
-function getZones(){
-    var zoneName: any[] = [];
+document.addEventListener('DOMContentLoaded', ()=>{ 
+  function fetchZones() {
     fetch('http://jump.javin.io:5000/api/zones')
     .then(response => response.json())
-    .then(obj => {
-        //console.log(obj);
-        var zones = obj.data;
-        const keys = Object.keys(zones);
-        //console.log(zones[index][index+1].name)
-        //console.log(keys);
-        keys.forEach((key) => {
-          var zoneID = Object.keys(zones[key]);
-          zoneName.push(zones[key][zoneID.toString()].name);
-          //console.log(zones[key][zoneID.toString()].name);
-        })
-        
-    })
+    .then( data => getZones(data))
     .catch(Error);
-    return zoneName;
-}
-*/
+  }
 
-
-async function getZones() {
-  const response = await fetch("http://jump.javin.io:5000/api/zones");
-  const zones = await response.json();
-  //console.log(zones.data[index][index+1].name)
-  //return zones.data[index][index+1].name;
-  return zones;
-}
-//var zones = getZones(0);
-//console.log(zones);
+  function getZones(zones:any){
+    const keys = Object.keys(zones.data)
+    console.log(keys)
+    let i = 1;
+    keys.forEach((key) => {
+      let textID = '#zone'+i
+      const zone = document.querySelector(textID)
+      const text = document.createElement('Text')
+      text.innerHTML = zones.data[key][i].name
+      zone?.append(text)
+      i++
+    })
+  }
+  fetchZones();
+})
 
 function Cards() {
   const theme = useMantineTheme();
   theme.colorScheme = 'light';
   return (
     <div className="App">
-      <Grid justify="space-around">
+      <Grid  id= 'grid1' justify="space-around">
+        
         <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
           <Card color="blue" shadow="sm" p="lg">
             <Group
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
-              <Text weight={500}>Norway Fjord Adventures</Text>
+              <Text id='zone1' weight={500}></Text>
             </Group>
-
             <Button
               variant="light"
               color="blue"
@@ -75,27 +62,7 @@ function Cards() {
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
-              <Text weight={500}>Norway Fjord Adventures</Text>
-            </Group>
-
-
-            <Button
-              variant="light"
-              color="blue"
-              fullWidth
-              style={{ marginTop: 14 }}
-            >
-              Get Award Data
-            </Button>
-          </Card>
-        </Grid.Col>
-        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
-          <Card shadow="sm" p="lg">
-            <Group
-              position="apart"
-              style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
-            >
-              <Text weight={500}>Norway Fjord Adventures</Text>
+              <Text id='zone2' weight={500}></Text>
             </Group>
 
 
@@ -115,7 +82,27 @@ function Cards() {
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
-              <Text weight={500}>Norway Fjord Adventures</Text>
+              <Text id='zone3' weight={500}></Text>
+            </Group>
+
+
+            <Button
+              variant="light"
+              color="blue"
+              fullWidth
+              style={{ marginTop: 14 }}
+            >
+              Get Award Data
+            </Button>
+          </Card>
+        </Grid.Col>
+        <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
+          <Card shadow="sm" p="lg">
+            <Group
+              position="apart"
+              style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
+            >
+              <Text id='zone4' weight={500}></Text>
             </Group>
 
 
@@ -137,7 +124,7 @@ function Cards() {
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
-              <Text weight={500}>Norway Fjord Adventures</Text>
+              <Text id='zone5' weight={500}></Text>
             </Group>
 
 
@@ -158,7 +145,7 @@ function Cards() {
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
-              <Text weight={500}>Norway Fjord Adventures</Text>
+              <Text id='zone6' weight={500}></Text>
             </Group>
 
 
@@ -178,7 +165,7 @@ function Cards() {
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
-              <Text weight={500}>Norway Fjord Adventures</Text>
+              <Text id='zone7' weight={500}></Text>
             </Group>
 
 
@@ -198,7 +185,7 @@ function Cards() {
               position="apart"
               style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
             >
-              <Text weight={500}>Norway Fjord Adventures</Text>
+              <Text id='zone8' weight={500}></Text>
             </Group>
 
 
