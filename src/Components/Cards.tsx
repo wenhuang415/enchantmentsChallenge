@@ -6,6 +6,7 @@ import {
   Text,
   Button,
 } from "@mantine/core";
+import Award from './Modal';
 
 document.addEventListener('DOMContentLoaded', ()=>{ 
   function fetchZones() {
@@ -35,7 +36,7 @@ function Cards() {
   const theme = useMantineTheme();
   theme.colorScheme = 'light';
   return (
-    <div className="App">
+    <div className="App" >
       <Grid  id= 'grid1' justify="space-around">
         
         <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
@@ -54,6 +55,7 @@ function Cards() {
             >
               Get Award Data
             </Button>
+            <Award/>
           </Card>
         </Grid.Col>
         <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
@@ -74,6 +76,7 @@ function Cards() {
             >
               Get Award Data
             </Button>
+            <Award/>
           </Card>
         </Grid.Col>
         <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
@@ -94,6 +97,7 @@ function Cards() {
             >
               Get Award Data
             </Button>
+            <Award/>
           </Card>
         </Grid.Col>
         <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
@@ -115,6 +119,7 @@ function Cards() {
             >
               Get Award Data
             </Button>
+            <Award/>
           </Card>
         </Grid.Col>
 
@@ -137,6 +142,7 @@ function Cards() {
             >
               Get Award Data
             </Button>
+            <Award/>
           </Card>
         </Grid.Col>
         <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
@@ -157,6 +163,7 @@ function Cards() {
             >
               Get Award Data
             </Button>
+            <Award/>
           </Card>
         </Grid.Col>
         <Grid.Col style={{paddingTop: 40, maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
@@ -177,6 +184,7 @@ function Cards() {
             >
               Get Award Data
             </Button>
+            <Award/>
           </Card>
         </Grid.Col>
         <Grid.Col style={{ paddingTop: 40,maxWidth: 300,minHeight:400 }} sm={4} xs={4}>
@@ -197,6 +205,7 @@ function Cards() {
             >
               Get Award Data
             </Button>
+            <Award/>
           </Card>
         </Grid.Col>
       </Grid>
